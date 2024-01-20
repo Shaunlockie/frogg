@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Frogg", "3.Frogg.csproj", "{080F9506-771D-4D7B-A83E-9D3C66E6A1EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{080F9506-771D-4D7B-A83E-9D3C66E6A1EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{080F9506-771D-4D7B-A83E-9D3C66E6A1EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{080F9506-771D-4D7B-A83E-9D3C66E6A1EA}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{080F9506-771D-4D7B-A83E-9D3C66E6A1EA}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{080F9506-771D-4D7B-A83E-9D3C66E6A1EA}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{080F9506-771D-4D7B-A83E-9D3C66E6A1EA}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
