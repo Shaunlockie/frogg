@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://ybi5txc6avoc"]
+
+[ext_resource type="Texture2D" uid="uid://b6vumudc73hae" path="res://icon.png" id="1_mr5rk"]
+[ext_resource type="Script" path="res://Entities/Character/Character.cs" id="1_vn2de"]
+[ext_resource type="PackedScene" uid="uid://cehe4ujqggutd" path="res://Entities/Character/Components/HealthComponent.tscn" id="2_uem8w"]
+[ext_resource type="PackedScene" uid="uid://csk0vjxu4evmc" path="res://Entities/Character/Components/HitBoxComponent.tscn" id="3_gft65"]
+[ext_resource type="PackedScene" uid="uid://cfx4ie5t154bf" path="res://Entities/Character/Components/MovementComponent.tscn" id="5_vu8ke"]
+[ext_resource type="PackedScene" uid="uid://dkhum1fqn8shl" path="res://Entities/Character/Components/InputComponent.tscn" id="6_p5052"]
+[ext_resource type="PackedScene" uid="uid://b1ke4w3p3a8rj" path="res://Entities/Character/Components/TileMapInteractionComponent.tscn" id="7_oo8mc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tha60"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc34i"]
+size = Vector2(14, 14)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("hit_box_component", "movement_component", "tilemap_interaction")]
+position = Vector2(47, 70)
+script = ExtResource("1_vn2de")
+hit_box_component = NodePath("HitBoxComponent")
+movement_component = NodePath("MovementComponent")
+tilemap_interaction = NodePath("TileMapInteractionComponent")
+grid_size_int = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tha60")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_mr5rk")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_uem8w")]
+
+[node name="HitBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_gft65")]
+scale = Vector2(1.00349, 1)
+collision_layer = 2
+collision_mask = 5
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+shape = SubResource("RectangleShape2D_hc34i")
+
+[node name="MovementComponent" parent="." instance=ExtResource("5_vu8ke")]
+
+[node name="InputComponent" parent="." node_paths=PackedStringArray("movement_component", "characterBody") instance=ExtResource("6_p5052")]
+movement_component = NodePath("../MovementComponent")
+characterBody = NodePath("..")
+
+[node name="TileMapInteractionComponent" parent="." instance=ExtResource("7_oo8mc")]

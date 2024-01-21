@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkhum1fqn8shl"]
+
+[ext_resource type="Script" path="res://Entities/Character/Components/InputComponent.cs" id="1_yymvc"]
+
+[node name="InputComponent" type="Node" node_paths=PackedStringArray("movement_component", "characterBody")]
+script = ExtResource("1_yymvc")
+movement_component = NodePath("")
+characterBody = NodePath("")
